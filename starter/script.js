@@ -88,27 +88,34 @@ var upperCasedCharacters = [
   'Z'
 ];
 
+
+
+
+
 // Function to prompt user for password options
 function getPasswordOptions() {
   
   let passwordLength = prompt("Choose a password length between 10 and 64");
     console.log(passwordLength);
 
-   let passwordOptionsLowerCase = confirm("If you would like Lowercase characters, please type 'L': ");
+   let passwordOptionsLowerCase = confirm("Would you like your password to contain Lowercase characters?");
     console.log(passwordOptionsLowerCase);
 
-    let passwordOptionsUpperCase = confirm("If you would like Uppercase characters, please type 'U': ");
+    let passwordOptionsUpperCase = confirm("Would you like your password to contain Uppercase characters?");
     console.log(passwordOptionsUpperCase);
 
-    let passwordOptionsNumeric = confirm("If you would like numeric characters, please type 'N': ");
+    let passwordOptionsNumeric = confirm("Would you like your password to contain Numeric characters?");
     console.log(passwordOptionsNumeric);
 
-    let passwordOptionsSpecialCharacter = confirm ("If you would like special characters, please type 'S': ");
+    let passwordOptionsSpecialCharacter = confirm ("Would you like your password to contain Special characters?");
     console.log(passwordOptionsSpecialCharacter);
 
   let passwordOptions = {
     length: passwordLength,
     lowerCase: passwordOptionsLowerCase,
+    upperCase: passwordOptionsUpperCase,
+    numeric: passwordOptionsNumeric,
+    special: passwordOptionsSpecialCharacter
     
   }
 
@@ -116,51 +123,37 @@ function getPasswordOptions() {
   
 }
 
-//getPasswordOptions();
 
 // Function for getting a random element from an array
-// function getRandom(arr) {
+let allCharacters = "";
 
-//   const array1 = ['a', 'b', 'c'];
-//   const array2 = ['d', 'e', 'f'];
-//   const array3 = array1.concat(array2);
+function getRandom(arr) {
 
-  
+  for (let i=0; i<passwordLength;i++){
 
-// }
+    let chosenCharacters = Math.floor(Math.random()*arr.length)
+
+    allCharacters += arr[chosenCharacters]
+  }
+return allCharacters;
+
+}
 
 // Function to generate password with user input
 function generatePassword() {
 
-  let options = getPasswordOptions();
-   
-  let practicePassword = "";
-  //for (let i = 0; i < passwordLength; i++) {
-    
- //   practicePassword += "j"
-    
-  //}
-
-console.log(options);
-
-  return practicePassword;
 }
 
 // Get references to the #generate element
-let generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
+generateBtn.addEventListener('click', writePassword);
