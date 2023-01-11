@@ -88,8 +88,7 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-
-
+let passwordLength;
 
 
 // Function to prompt user for password options
