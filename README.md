@@ -20,4 +20,12 @@ The password can include special characters. If you’re unfamiliar with these, 
   * At least one character type should be selected
   * Once prompts are answered then the password will be generated 
 
+  ## Screenshot
+
+![Image](assets/05-javascript-challenge-demo.png)
+
+## Deployed link
+
+https://analupucci.github.io/Password-Generator-Challenge/
+
 
