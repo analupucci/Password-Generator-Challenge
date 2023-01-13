@@ -95,9 +95,9 @@ let passwordLength;
 function getPasswordOptions() {
   
   let passwordLength = parseInt (prompt("Choose a password length between 10 and 64"))
-  while (length < 10 || length > 64) {
-    length = parseInt(prompt("Password length must be between 10 and 64 characters. Please enter a valid number."));
-    };
+  // while (length < 10 || length > 64) {
+  //   length = parseInt(prompt("Password length must be between 10 and 64 characters. Please enter a valid number."));
+  //   };
     console.log(passwordLength);
 
    let passwordOptionsLowerCase = confirm("Would you like your password to contain Lowercase characters?");
@@ -127,7 +127,7 @@ function getPasswordOptions() {
     return passwordOptions;
   
 }
-
+}
 
 // Function for getting a random element from an array
 let allCharacters = "";
