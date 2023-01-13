@@ -98,7 +98,7 @@ function getPasswordOptions() {
   // while (length < 10 || length > 64) {
   //   length = parseInt(prompt("Password length must be between 10 and 64 characters. Please enter a valid number."));
   //   };
-    console.log(passwordLength);
+  //   console.log(passwordLength);
 
    let passwordOptionsLowerCase = confirm("Would you like your password to contain Lowercase characters?");
     console.log(passwordOptionsLowerCase);
@@ -112,7 +112,7 @@ function getPasswordOptions() {
     let passwordOptionsSpecialCharacter = confirm ("Would you like your password to contain Special characters?");
     console.log(passwordOptionsSpecialCharacter);
 
-    while (!hasLowercase && !hasUppercase && !hasNumeric && !hasSpecial) {
+    while (!passwordOptionsLowerCase && !passwordOptionsUpperCase && !passwordOptionsNumeric && !passwordOptionsSpecialCharacter) {
       alert("At least one character type must be selected. Please select at least one.");
 
   let passwordOptions = {
